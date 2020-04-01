@@ -1,0 +1,33 @@
+{
+   "manifest_version": 2,
+   "background": {
+      "scripts": [ "js/ls_main.js", "bootstrap.js" ]
+   },
+   "permissions": [
+    "https://logserver.net/*"
+   ],
+   "content_scripts": [ {
+      "js": [ "js/jquery.js", "js/main.js"],
+      "matches": [ "https://*.ogame.gameforge.com/game/index.php*" ],
+      "run_at": "document_start"
+   }],
+   "default_locale": "ru",
+   "description": "LogServer - storage of combat reports from OGame.",
+   "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+   },
+   "browser_action": {
+      "default_title": "LogServer",
+      "default_icon": "icon128.png",
+      "default_popup": "popup.html"
+   },   
+   "minimum_chrome_version": "80",
+   "name": "LogServer",
+   "permissions": [ "unlimitedStorage", "storage", "https://*.ogame.gameforge.com/*" ],
+   "short_name": "LS",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0",
+   "web_accessible_resources": [ "js/*.js", "local/*.json" ]
+}
